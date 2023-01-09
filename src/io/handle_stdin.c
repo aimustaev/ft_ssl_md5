@@ -6,7 +6,7 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:25:11 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:25:12 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 21:51:35 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Gathers input from stdin and prints results.
 */
 
-void	handle_stdin(const t_ssl_f *ssl_f)
+void	handle_stdin(const t_ssl_func *ssl_f)
 {
 	t_msg			*msg;
 	char			buffer[SSL_READ_BUFFSIZE];

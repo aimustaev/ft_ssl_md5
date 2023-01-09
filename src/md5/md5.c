@@ -6,7 +6,7 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:25:20 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:25:21 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 22:07:48 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static char	*md5tostr(unsigned int hashbuff[4])
 		j = -1;
 		while (++j < 4)
 		{
-			out[i * 8 + j * 2] = quartet_to_hex((p[j] >> 4));
-			out[i * 8 + j * 2 + 1] = quartet_to_hex(p[j]);
+			out[i * 8 + j * 2] = char_to_hex((p[j] >> 4));
+			out[i * 8 + j * 2 + 1] = char_to_hex(p[j]);
 		}
 		i++;
 	}

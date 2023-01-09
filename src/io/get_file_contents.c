@@ -6,16 +6,13 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:25:06 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:25:07 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 22:20:11 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ssl.h>
 
-/*
-** Reads file as bytes and retains the length into a struct.
-*/
-
+// Считываем данные с файла и добавляем в структурку
 t_msg	*get_file_contents(char *file)
 {
 	int				fd;

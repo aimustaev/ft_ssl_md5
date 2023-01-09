@@ -16,7 +16,7 @@ SRC_RAW =   main \
             sha256 \
 			sha384 \
 			sha512 \
-            quartet_to_hex \
+            char_to_hex \
             swap_endian_uint64 \
             del_msg \
             init_msg \

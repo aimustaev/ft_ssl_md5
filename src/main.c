@@ -6,7 +6,7 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:28:10 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:28:15 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 21:51:35 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Prints the string associated with the -s option.
 */
 
-void	print_stropt(char *str, t_msg *msg, const t_ssl_f *ssl_f)
+void	print_stropt(char *str, t_msg *msg, const t_ssl_func *ssl_f)
 {
 	char *digest;
 
@@ -33,7 +33,7 @@ void	print_stropt(char *str, t_msg *msg, const t_ssl_f *ssl_f)
 ** `-shello` is equal to `-s "hello"`
 */
 
-void	handle_string_option(char **argv_offset, const t_ssl_f *ssl_f, int *i)
+void	handle_string_option(char **argv_offset, const t_ssl_func *ssl_f, int *i)
 {
 	char	*tmp;
 	t_msg	*msg;
@@ -64,7 +64,7 @@ void	handle_string_option(char **argv_offset, const t_ssl_f *ssl_f, int *i)
 ** then loops all messages through digest.
 */
 
-void	print_hash(char **argv, const t_ssl_f *ssl_f)
+void	print_hash(char **argv, const t_ssl_func *ssl_f)
 {
 	int		i;
 	char	*digest;
@@ -97,7 +97,7 @@ void	print_hash(char **argv, const t_ssl_f *ssl_f)
 
 int		main(int argc, char **argv)
 {
-	const t_ssl_f	*sfunct;
+	const t_ssl_func	*sfunct;
 	int				i;
 
 	g_ft_ssl_flags = 0;
@@ -108,14 +108,14 @@ int		main(int argc, char **argv)
 	else
 	{
 		i = -1;
-		while (g_ssl_functs[++i].name)
-			if (ft_strequ(g_ssl_functs[i].name, argv[1]))
+		while (g_ssl_func_mapping[++i].name)
+			if (ft_strequ(g_ssl_func_mapping[i].name, argv[1]))
 			{
-				sfunct = &g_ssl_functs[i];
+				sfunct = &g_ssl_func_mapping[i];
 				print_hash(&argv[2], sfunct);
 				break ;
 			}
-		if (!g_ssl_functs[i].name)
+		if (!g_ssl_func_mapping[i].name)
 		{
 			ft_printf("ft_ssl: Error: '%s' is an invalid command\n", argv[1]);
 			ft_ssl_help();

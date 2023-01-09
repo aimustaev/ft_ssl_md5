@@ -6,7 +6,7 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:25:16 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:25:17 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 21:51:35 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	print_original(char *o, int is_string)
 */
 
 void		print_explicit_format(
-	t_ssl_f hashtype,
+	t_ssl_func hashtype,
 	char *out_digest,
 	char *original,
 	int is_string)

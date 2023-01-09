@@ -6,15 +6,13 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:28:02 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:28:02 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 22:10:20 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-/*
-** Converts the endianness of a 64 bit integer.
-*/
-
+// Преобразование из big_endian -> little_endian
+// https://stackoverflow.com/questions/105252/how-do-i-convert-between-big-endian-and-little-endian-values-in-c
 unsigned long long	swap_endian_uint64(long long bits)
 {
 	return (

@@ -6,7 +6,7 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:25:56 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:25:56 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 22:07:48 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static char				*sha256tostr(unsigned int hashbuff[8])
 		j = 0;
 		while (j < 4)
 		{
-			out[i * 8 + j * 2] = quartet_to_hex((p[3 - j] >> 4));
-			out[i * 8 + j * 2 + 1] = quartet_to_hex(p[3 - j]);
+			out[i * 8 + j * 2] = char_to_hex((p[3 - j] >> 4));
+			out[i * 8 + j * 2 + 1] = char_to_hex(p[3 - j]);
 			j++;
 		}
 		i++;

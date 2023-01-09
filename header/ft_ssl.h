@@ -6,7 +6,7 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:28:29 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:28:32 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 22:07:48 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct			s_ssl_f
 {
 	char *name;
 	char *(*funct)(t_msg *);
-}						t_ssl_f;
+}						t_ssl_func;
 
 typedef struct			s_ssl_opts
 {
@@ -71,7 +71,7 @@ int						g_ft_ssl_flags;
 */
 
 unsigned long long		swap_endian_uint64(long long bits);
-char					quartet_to_hex(unsigned char quartet);
+char					char_to_hex(unsigned char quartet);
 t_msg					*init_msg();
 void					del_msg(t_msg **msg);
 void					ft_ssl_usage(void);
@@ -83,8 +83,8 @@ void					ft_ssl_help(void);
 
 void					load_ftssl_opts(char **argv, int *ai);
 t_msg					*get_file_contents(char *file);
-void					handle_stdin(const t_ssl_f *ssl_f);
-void					print_explicit_format(t_ssl_f hashtype,
+void					handle_stdin(const t_ssl_func *ssl_f);
+void					print_explicit_format(t_ssl_func hashtype,
 							char *out_digest, char *original, int is_string);
 
 /*
@@ -143,7 +143,7 @@ static const t_ssl_opts	g_ssl_opts[] =
 ** to add more digests, simply add to this list, nowhere else needs changing.
 */
 
-static const t_ssl_f	g_ssl_functs[] =
+static const t_ssl_func	g_ssl_func_mapping[] =
 {
 	{ "md5", &ft_md5 },
 	{ "sha224", &ft_sha224 },

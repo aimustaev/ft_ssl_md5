@@ -6,17 +6,14 @@
 /*   By: aimustaev <aimustaev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:26:09 by aimustaev         #+#    #+#             */
-/*   Updated: 2023/01/09 20:26:09 by aimustaev        ###   ########.fr       */
+/*   Updated: 2023/01/09 22:03:58 by aimustaev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_ssl.h>
 
-/*
-** Returns the bit associated with the flag represented by c
-*/
-
-int			get_ft_ssl_opt(char c)
+// По названию параметра возвращаем бит флага
+int get_ft_ssl_opt(char c)
 {
 	int i;
 
@@ -30,24 +27,16 @@ int			get_ft_ssl_opt(char c)
 	return (0);
 }
 
-/*
-** Alert invalid flag and exit program.
-*/
-
-static void	print_invalid_ssl_flag(char c)
+// Алертим если невалидный флаг
+static void print_invalid_ssl_flag(char c)
 {
 	ft_printf("ft_ssl: Error: Invalid flag: %c\n", c);
 	ft_ssl_usage();
 	exit(0);
 }
 
-/*
-** Loads all of the flags from the passed arguments.
-** Note that argv is passed as an offset, where the first element
-** is immediately after the command.
-*/
-
-void		load_ftssl_opts(char **argv, int *ai)
+// Обработка флагов которые мы вводим при старте утилиты -qs
+void load_ftssl_opts(char **argv, int *arc_iterator)
 {
 	int i;
 	int j;
@@ -65,11 +54,11 @@ void		load_ftssl_opts(char **argv, int *ai)
 				print_invalid_ssl_flag(argv[i][j]);
 			if (val == FTSSL_S)
 			{
-				*ai += i;
-				return ;
+				*arc_iterator += i;
+				return;
 			}
 		}
 		i++;
 	}
-	*ai += i;
+	*arc_iterator += i;
 }

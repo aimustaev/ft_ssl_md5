@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.ts": "typescript",
+        "libft.h": "c",
+        "ft_printf.h": "c"
+    }
+}
